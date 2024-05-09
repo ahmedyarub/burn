@@ -144,3 +144,6 @@ systemstat = "0.2.3"
 
 [profile.dev]
 debug = 0 # Speed up compilation time and not necessary.
+
+[alias]
+xtask = "run --manifest-path ./xtask/Cargo.toml --"
