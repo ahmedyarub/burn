@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.5
 
       - name: Check semantic versioning violations
-        uses: obi1kenobi/cargo-semver-checks-action@v2
+        uses: obi1kenobi/cargo-semver-checks-action@v2.3
         with:
           # cargo-semver-checks uses `all-features` by default, but `burn`
           # publishes on crates.io with `default-features`
