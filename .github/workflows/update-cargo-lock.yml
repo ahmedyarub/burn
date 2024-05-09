@@ -9,8 +9,8 @@ jobs:
     name: Update Cargo.lock file
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v4.1.5
+      - uses: actions-rs/toolchain@v1.0.6
         with:
           toolchain: stable
       # we use a GitHub app token so that other workflows can react to the
@@ -19,7 +19,7 @@ jobs:
       # For additional info -> https://github.com/actions/create-github-app-token
       - name: generate GitHub app token
         id: generate-app-token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@v1.10.0
         with:
           app-id: ${{ secrets.UPDATE_CARGO_LOCK_APP_ID }}
           private-key: ${{ secrets.UPDATE_CARGO_LOCK_APP_PRIVATE_KEY }}
