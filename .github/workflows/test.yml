@@ -67,7 +67,7 @@ jobs:
       matrix:
         os: [windows-2022]
         # We support both the latest Rust toolchain and the preceding version.
-        rust: [stable, 1.78.0]
+        rust: [stable]
         test: ['std']
         include:
           - cache: stable
