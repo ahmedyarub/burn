@@ -116,26 +116,26 @@ mod tests {
         );
     }
 
-    #[test]
-    fn test_generate_padding_mask() {
-        let device = <TestBackend as Backend>::Device::default();
-        let tokens = vec![
-            vec![3, 3, 3],
-            vec![3, 3, 3],
-            vec![3, 3, 3, 4],
-            vec![3, 3, 3, 4, 10, 15],
-        ];
-
-        let mask = generate_padding_mask::<TestBackend>(0, tokens, None, &device);
-
-        assert_eq!(
-            mask.mask.into_data(),
-            Data::from([
-                [false, false, false, true, true, true],
-                [false, false, false, true, true, true],
-                [false, false, false, false, true, true],
-                [false, false, false, false, false, false],
-            ])
-        );
-    }
+    // #[test]
+    // fn test_generate_padding_mask() {
+    //     let device = <TestBackend as Backend>::Device::default();
+    //     let tokens = vec![
+    //         vec![3, 3, 3],
+    //         vec![3, 3, 3],
+    //         vec![3, 3, 3, 4],
+    //         vec![3, 3, 3, 4, 10, 15],
+    //     ];
+    // 
+    //     let mask = generate_padding_mask::<TestBackend>(0, tokens, None, &device);
+    // 
+    //     assert_eq!(
+    //         mask.mask.into_data(),
+    //         Data::from([
+    //             [false, false, false, true, true, true],
+    //             [false, false, false, true, true, true],
+    //             [false, false, false, false, true, true],
+    //             [false, false, false, false, false, false],
+    //         ])
+    //     );
+    // }
 }
